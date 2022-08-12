@@ -1,0 +1,11 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{Введение}{4}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Аналитический раздел}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Постановка задачи}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Формализация данных}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}ER-диаграмма сущностей}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Типы пользователей}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Описание существующих СУБД}{8}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Основные функции СУБД}{8}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Классификация СУБД по модели данных}{9}{subsection.1.5.2}%
+\contentsline {section}{Вывод}{10}{figure.caption.9}%
