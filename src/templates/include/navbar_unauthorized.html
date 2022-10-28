@@ -1,0 +1,6 @@
+{% load static %}
+
+<div class="account-info ms-auto">
+    <button onclick="document.location={% url 'login' %}" type="button" class="my-button btn btn-outline-success">Войти</button>
+    <button onclick="document.location={% url 'signup' %}" type="button" class="my-button btn btn-outline-success">Зарегистрироваться</button>
+</div>

@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="row product mx-5 my-4">
+    <div class="col-3">
+        <img class="product-img" src="{{ review.profile.avatar.url }}">
+        <div class="nick" style="text-decoration: underline; text-align: center; margin-top: 30px;"><h5>{{ review.profile.user.username }}</h5></div>
+    </div>
+    <div class="col-9">
+        <div class = "text">
+            {{ review.content }}
+        </div>
+    </div>
+    <div class="d-flex">
+        <div class="rating ms-auto mt-3 mx-2 like_{{ review.id }}"><h5>{{ review.rating }}</h5></div>
+        <button type="button" class="btn js-vote-like" data-type="review" data-action="like" data-rid={{ review.id }}>
+            <img src="{% static 'img/like.png' %}" class="like">
+        </button>
+        <button type="button" class="btn js-vote-dislike" data-type="review" data-action="dislike" data-rid={{ review.id }}>
+            <img src="{% static 'img/dislike.png' %}" class="like">
+        </button>
+    </div>
+</div>

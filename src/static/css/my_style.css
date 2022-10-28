@@ -1,0 +1,173 @@
+main>.container {
+    padding: 130px 15px 0;
+}
+
+.product {
+    margin: 30px;
+    padding: 10px;
+    border: 2px solid #322e2f;
+    border-radius: 5px;
+}
+
+.product_order {
+    margin: 3px;
+    padding: 10px;
+    border: 2px solid #322e2f;
+    border-radius: 5px;
+}
+
+.bag-product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-img {
+    width: 70%;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.navbar {
+    background-color: #322e2f;
+    color: #12a4d9;
+    opacity: 95%;
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+
+.ask-button {
+    color: white;
+    border-color: white;
+    font-size: 30px;
+    width: 150px;
+}
+
+.ask-button:hover {
+    background-color: #d9138a;
+}
+
+.sort-button {
+    color: white;
+    border-color: white;
+}
+
+.sort-button:hover {
+    background-color: #d9138a;
+}
+
+.search-field {
+    width: 500px;
+    margin-left: 300px;
+}
+
+.my-button {
+    color: white;
+    border-color: white;
+}
+
+.my-button:hover {
+    background-color: #12a4d9;
+}
+
+.hot-button {
+    color: black;
+    border-color: black;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.hot-button:hover {
+    background-color: #12a4d9;
+}
+
+.submit-button {
+    color: black;
+    border-color: black;
+}
+
+.submit-button:hover {
+    background-color: #12a4d9;
+}
+
+.create-button {
+    color: white;
+    border-color: black;
+    background-color: #12a4d9;
+}
+
+.short-description {
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    min-width: 200px;
+}
+
+.avatar {
+    width: 15%;
+    border-radius: 20px;
+}
+
+.username {
+    justify-content: space-around;
+}
+
+.utils {
+    justify-content: space-around;
+}
+
+.popular-categories {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.best-members {
+    flex-wrap: wrap;
+}
+
+.member-item {
+    background-color: #d9138a;
+    margin: 2px;
+    font-size: 20px;
+}
+
+.category-item {
+    background-color: #e2d810;
+    margin: 2px;
+    font-size: 20px;
+}
+
+.page-item {
+    color: #12a4d9;
+}
+
+.categories {
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.like {
+    width: 30px;
+    height: 30px;
+}
+
+.rating {
+    color: #d9138a;
+    font-size: 25px;
+}
+
+.ask-product {
+    border: 0px;
+    border-bottom: 2px solid #322e2f;
+    border-radius: 0%;
+}
+
+.account-info {
+    justify-content: right;
+}

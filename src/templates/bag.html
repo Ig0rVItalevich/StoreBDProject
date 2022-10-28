@@ -1,0 +1,21 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h2>Корзина</h2>
+    
+    {% for product in products %}
+        {% include 'include/product_short.html' %}
+    {% endfor %}
+
+    <div class="d-flex me-4" style="justify-content: right;">
+        <h4>Итоговая стоимость:</h4>
+        <h4 class="total_price ms-1">{{ total_price }}</h4>
+    </div>
+
+    <div class="col-3 d-flex" style="justify-content: space-around; margin-bottom: 20px;">
+        <button type="button" class="btn submit-button js-make-order" data-action="make_order">Заказать</button>
+        <button onclick="document.location={% url 'order_history' %}" type="button" class="btn create-button ms-2">История заказов</button>
+    </div>
+{% endblock content %}

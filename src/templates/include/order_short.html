@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="row product">
+    <div class="col-8">
+        <a href="{% url 'order' order.id %}" style="text-decoration: none; color: black;"><h4>Заказ: {{ order.order_date }}</h4></a>
+    </div>
+    <div class="col-4 bag-product">
+        <div style="text-decoration: none; color: black;"><h5>Итоговая стоимость: {{ order.total_price }}</h5></div>
+    </div>
+</div>

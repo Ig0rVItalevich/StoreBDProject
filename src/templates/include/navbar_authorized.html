@@ -1,0 +1,11 @@
+{% load static %}
+<div class="account-info d-flex ms-5">
+    <img src="{{ request.user.profile.avatar.url }}" class="avatar">
+    <div class="short-description d-flex">
+        <h3 class="d-flex username">{{ request.user.username }}</h3>
+        <div class="utils d-flex">
+            <button onclick="document.location={% url 'settings' %}" type="button" class="my-button btn btn-outline-success">Настройки</button>
+            <button onclick="document.location={% url 'logout' %}" type="button" class="my-button btn btn-outline-success">Выйти</button>
+        </div>
+    </div>
+</div>

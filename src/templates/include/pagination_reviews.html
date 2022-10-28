@@ -1,0 +1,32 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="?page=1" tabindex="-1">Первая</a>
+        </li>
+        {% if reviews.has_previous %}
+            <li class="page-item enabled">
+                <a class="page-link" href="?page={{ reviews.previous_page_number }}" tabindex="-1">Previous</a>
+            </li>
+                {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Предыдущая</a>
+            </li>
+        {% endif %}
+
+        {% for i in pages %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endfor %}
+        {% if reviews.has_next %}
+            <li class="page-item enabled">
+                <a class="page-link" href="?page={{ reviews.next_page_number }}" tabindex="-1">Следующая</a>
+            </li>
+                {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Следующая</a>
+            </li>
+        {% endif %}
+        <li class="page-item">
+                <a class="page-link" href="?page={{ reviews.paginator.num_pages }}" tabindex="-1">Последняя</a>
+        </li>
+    </ul>
+</nav>

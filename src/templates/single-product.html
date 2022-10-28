@@ -1,0 +1,69 @@
+{% extends 'include/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+{% block content %}
+
+    <div class="row product ask-product">
+        <div class="col-3">
+            <img class="product-img" src="{{ product.product_image.url }}" >
+        </div>
+        <div class="col-9">
+            <h3>{{ product.title }}</h3>
+            {{ product.content }}
+        </div>
+        <div class="d-flex" style="align-items: center;">
+            <div class = "text"><h4>Цена: {{ product.cost }}</h4></div>
+            <div class = "text ms-3"><h4>Объем: {{ product.volume }}</h4></div>
+            <div class="rating ms-auto mt-3 mx-2 like_{{ product.id }}"><h5>{{ product.rating }}</h5></div>
+            <button type="button" class="btn js-vote-like" data-type="product" data-action="like" data-pid={{ product.id }}>
+                <img src="{% static 'img/like.png' %}" class="like">
+            </button>
+            <button type="button" class="btn js-vote-dislike" data-type="product" data-action="dislike" data-pid={{ product.id }}>
+                <img src="{% static 'img/dislike.png' %}" class="like">
+            </button>
+        </div>
+        <div class="categories d-flex">
+            <h4 class="mt-1">Категории:</h4>
+            {% for category in product.categories.all %}
+                <span class="category-item badge"><a style="text-decoration:none; color:white;" href="{% url 'category' category.name %}">{{ category.name }}</a></span>
+            {% endfor %}
+
+            <button type="button" class="btn submit-button ms-auto js-add-to-cart" data-action="add-to-cart" data-pid={{ product.id }}>Добавить в корзину</button>
+        </div>
+    </div>
+
+    {% for review in reviews %}
+        {% include 'include/review.html' %}
+    {% endfor %}
+
+    {% include 'include/pagination_reviews.html' %}
+
+    <form method="post" action="/product/{{ product.id }}">
+        {% csrf_token %}
+
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+
+        {% for field in form.visible_fields %}
+        <div class="mb-3" style="margin-left: 45px; margin-right: 45px;">
+            {{ field }}
+
+            <button type="submit" class="btn submit-button me-auto">Отзыв</button>
+        </div>
+
+        {% for error in field.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                {{ error }}
+            </div>
+        {% endfor %}
+
+        {% endfor %}
+    </form>
+
+{% endblock content %}

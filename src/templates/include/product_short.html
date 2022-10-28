@@ -1,0 +1,20 @@
+{% load static %}
+
+<div class="row product" id="product_{{ product.id }}">
+    <div class="col-6">
+        <a href="{% url 'product' product.id %}" style="text-decoration: none; color: black;"><h4>{{ product.title }}</h4></a>
+    </div>
+    <div class="col-4 bag-product">
+        <span style="text-decoration: none; color: black;"> Цена: </span>
+        <div class="cost_{{ product.id }}" style="text-decoration: none; color: black;"> {{ product.cost }}</div>
+        <span style="text-decoration: none; color: black;"> Количество: </span>
+        <div class="count_{{ product.id }}" style="text-decoration: none; color: black;">{{ product.count }}</div>
+        <span style="text-decoration: none; color: black;"> Итог: </span>
+        <div class="total_{{ product.id }}" style="text-decoration: none; color: black;">{{ product.total }}</div>
+    </div>
+
+    <div class="col-2 bag-product">
+        <button type="button" class="btn js-reduce_amount_cart" data-type="product" data-action="reduce_amount_cart" data-pid={{ product.id }}>-</button>
+        <button type="button" class="btn js-increase_amount_cart" data-type="product" data-action="increase_amount_cart" data-pid={{ product.id }}>+</button>
+    </div>
+</div>

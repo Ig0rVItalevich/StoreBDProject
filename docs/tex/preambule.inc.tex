@@ -1,0 +1,96 @@
+\usepackage{cmap}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usepackage{caption}
+\captionsetup{labelsep=endash}
+\captionsetup[figure]{name={Рисунок}}
+
+\usepackage{amsmath}
+
+\usepackage{geometry}
+\geometry{left=30mm}
+\geometry{right=10mm}
+\geometry{top=20mm}
+\geometry{bottom=20mm}
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalsize\bfseries}
+{\thesection}
+{1em}{}
+\titlespacing*{\chapter}{0pt}{-30pt}{8pt}
+\titlespacing*{\section}{\parindent}{*4}{*4}
+\titlespacing*{\subsection}{\parindent}{*4}{*4}
+
+\usepackage{setspace}
+\onehalfspacing % Полуторный интервал
+
+\frenchspacing
+\usepackage{indentfirst} % Красная строка
+
+\usepackage{titlesec}
+\usepackage{xcolor}
+
+% Названия глав
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{20pt}{\LARGE\bfseries}
+\titleformat{\section}{\Large\bfseries}{\thesection}{20pt}{\Large\bfseries}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage[pdftex]{hyperref} % Гиперссылки
+\hypersetup{hidelinks}
+
+% Листинги 
+\usepackage{listings}
+
+\definecolor{darkgray}{gray}{0.15}
+
+\usepackage{listings}
+\lstset{
+	frame=single,
+	basicstyle=\footnotesize\ttfamily,
+	identifierstyle=\color{darkgray},
+	keywordstyle=\color{black},
+	showstringspaces=false, 
+	captionpos=t,
+	tabsize=4,
+	language=c
+}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+  
+\renewcommand{\labelitemi}{$-$}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand{\labelenumi}{\theenumi)}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumii)}
+
+% какой то сложный кусок со стак эксчейндж для квадратных скобок
+\usepackage{array}
+\DeclareMathOperator{\rank}{rank}
+\makeatletter
+\newenvironment{sqcases}{%
+	\matrix@check\sqcases\env@sqcases
+}{%
+	\endarray\right.%
+}
+\def\env@sqcases{%
+	\let\@ifnextchar\new@ifnextchar
+	\left\lbrack
+	\def\arraystretch{1.2}%
+	\array{@{}l@{\quad}l@{}}%
+}
+\makeatother

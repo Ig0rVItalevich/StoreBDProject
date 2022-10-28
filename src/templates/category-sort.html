@@ -1,0 +1,14 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h2 class="d-inline">Категория: {{ category }}</h2>
+
+    {% for product in products %}
+        {% include 'include/product.html' %}
+    {% endfor %}
+
+    {% include 'include/pagination_products.html' %}
+
+{% endblock content %}

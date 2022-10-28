@@ -1,0 +1,25 @@
+{% load static %}
+{% load widget_tweaks %}
+
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container-fluid ms-auto">
+        <a class="navbar-brand" href="{% url 'index' %}">Perfume</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <button onclick="document.location={% url 'bag' %}" class="ask-button btn btn-outline-success" type="button">Корзина</button>
+            <form class="d-flex" method="post" action="/search/">
+                {% csrf_token %}
+                {% for field in search_form.visible_fields %}
+                    {{field|add_class:'form-control me-2 search-field'}}
+                {% endfor %}
+                <button class="my-button btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+
+            {% if request.user.is_authenticated %}
+                {% include "include/navbar_authorized.html" %}
+            {% else %}
+                {% include "include/navbar_unauthorized.html" %}
+            {% endif %}
+        </div>
+    </div>
+</nav>

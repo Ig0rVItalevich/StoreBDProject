@@ -1,0 +1,31 @@
+{% extends 'include/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-7"><h2>Товары: {{sort_name}}</h2></div>
+
+        <div class="col-5 dropdown d-flex" style="justify-content: right;">
+            <a class="btn btn-secondary dropdown-toggle sort-button" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Сортировка
+            </a>
+
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'products' "ascending_price" %}">По возрастанию цены</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' "descending__price" %}">По убыванию цены</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' "by_update_date" %}">По дате обновления</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' "according_to_reviews" %}">По количеству отзывов</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' "by_rating" %}">ПО рейтингу</a></li>
+                <li><a class="dropdown-item" href="{% url 'products' "by_popularuty" %}">По популярности</a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% for product in products %}
+        {% include 'include/product.html' %}
+    {% endfor %}
+
+    {% include 'include/pagination_products.html' %}
+
+{% endblock content %}

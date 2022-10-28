@@ -1,0 +1,64 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfume</title>
+
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/my_style.css" %}" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <header>
+        {% include 'include/navbar.html' %}
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+                <div class="col-3">
+                    <h2>Популярные категории</h2>
+                    <div class="popular-categories d-flex">
+                        {% for category in top_categories %}
+                            <span class="category-item badge"><a style="text-decoration:none; color:white;" href="{% url 'category' category.name %}">{{ category.name }}</a></span>
+                        {% endfor %}
+                    </div>
+                    <h2>Популярные продукты</h2>
+                    <div class="best-members d-flex">
+                        {% for product in top_products %}
+                            <span class="member-item badge"><a style="text-decoration:none; color:white;" href="{% url 'product' product.id %}">{{ product.title }}</a></span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container d-flex justify-content-center flex-column align-items-center">
+            <span class="text-muted">DataBase course project</span>
+            <span class="text-muted">Author: Kuzmin Kirill</span>
+        </div>
+    </footer>
+
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/csrf.js" %}"></script>
+    <script src="{% static "js/vote.js" %}"></script>
+    <script src="{% static "js/add_to_cart.js" %}"></script>
+    <script src="{% static "js/cart_actions.js" %}"></script>
+    <script src="{% static "js/make_order.js" %}"></script>    
+    <script src="{% static "js/js.cookie.js" %}"></script> 
+</body>
+
+</html>
