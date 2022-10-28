@@ -1,1 +1,1 @@
-# bd_cp
+# BD course project on django
