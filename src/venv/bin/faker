@@ -1,4 +1,4 @@
-#!/home/kirill/Documents/bd_cp/src/venv/bin/python
+#!/home/kirill/Documents/BD_CP/StoreBDProject/src/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

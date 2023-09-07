@@ -12,7 +12,6 @@ COUNT_PRODUCTS = 465
 COUNT_REVIEWS = 10000
 COUNT_LIKES = 500
 COUNT_ORDERS = 100
-COUNT_CATEGORIES = 25
 
 categories_titles = ['edt', 'edp', 'cologne', 'perfum', 'men', 'women',
                      'solid perfume', 'oil perfume', 'perfume oil', 'tester', 'otlivant', 'miniature', 'gift wrap']
@@ -27,7 +26,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         self.users_generate(COUNT_USERS)
-        self.categories_generate(COUNT_CATEGORIES)
+        self.categories_generate(len(categories_titles))
         self.product_generate(COUNT_PRODUCTS)
         self.review_generate(COUNT_REVIEWS)
         self.order_generate(COUNT_ORDERS)
@@ -58,7 +57,7 @@ class Command(BaseCommand):
             Category.objects.create(name=categories_titles[random.randint(1, len(categories_titles)) - 1])
 
     def product_generate(self, count):
-        with open("/home/kirill/Documents/bd_cp/src/app/management/commands/items.json","r") as read_file: 
+        with open("/home/kirill/Documents/BD_CP/StoreBDProject/src/app/management/commands/items.json","r") as read_file: 
             items = json.load(read_file)
         cnt_categories = Category.objects.all().count()
         category_id = Category.objects.order_by('id')[0].id

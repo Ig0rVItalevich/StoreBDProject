@@ -37,11 +37,16 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "controlcenter",
     "app",
     "app.management.commands",
     "bootstrap4",
     "widget_tweaks",
 ]
+
+CONTROLCENTER_DASHBOARDS = (
+    ('mydash', 'perfume.dashboards.MyDashboard'),
+)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

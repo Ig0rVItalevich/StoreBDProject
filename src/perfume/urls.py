@@ -2,11 +2,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
+from controlcenter.views import controlcenter
 
 from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('dashboard/', controlcenter.urls),
     path('products/<str:sort_name>', views.products, name="products"),
     path('product/<int:number>', views.product, name="product"),
     path('category/<str:category_name>', views.category, name="category"),
